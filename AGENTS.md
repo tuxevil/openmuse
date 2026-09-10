@@ -6,7 +6,7 @@ This file is the primary working contract for coding agents contributing to Open
 
 OpenMuse is an open-source, model-agnostic personal AI agent inspired by the publicly described product/security architecture of Meta Muse, but implemented independently and designed for self-hosting, portability, and multiple model providers.
 
-The current phase is **architecture-first pre-alpha**. Do not optimize for feature count. Preserve trust boundaries and durable state semantics.
+The current phase is **Phase 1 + Phase 2 pre-alpha implementation**. Do not optimize for feature count. Preserve trust boundaries and durable state semantics.
 
 ## Product invariant
 

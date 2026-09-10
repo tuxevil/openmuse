@@ -10,7 +10,19 @@ OpenMuse is **not** an unofficial client for Meta Muse and does not use or depen
 
 ## Status
 
-**Pre-alpha / architecture phase.** The repository currently defines the product vision, architecture, security model, model contract, runtime boundaries, memory design, goals/tasks model, skills/connectors model, and implementation roadmap before substantial code is written.
+**Pre-alpha / Phase 1 + Phase 2.** The repository now contains a durable single-user control plane and a provider-neutral model loop. Phase 3 runtime isolation and the later Sentinel/connector work remain intentionally separate milestones.
+
+The current implementation includes:
+
+- PostgreSQL migration plus a SQLite test backend;
+- durable users, instances, conversations, messages, goals, tasks, schedules, executions, events, outbox entries, artifacts, audit events, and model profiles;
+- transactional schedule-delivery deduplication and restart-safe execution checkpoints;
+- an OpenMuse-owned `ModelAdapter` contract;
+- fake deterministic and OpenAI-compatible adapters (including LiteLLM/Ollama/vLLM-compatible HTTP targets);
+- normalized responses, streaming events, tool proposals, structured-output validation, usage accounting, model routing hooks, and local-only routing;
+- a minimal stdlib HTTP API and CLI.
+
+See [docs/phase-1-2.md](docs/phase-1-2.md) for the implementation boundary and quickstart.
 
 ## Core idea
 

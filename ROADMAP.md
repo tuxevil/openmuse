@@ -38,6 +38,11 @@ Exit criteria:
 
 ## Phase 1 — Durable single-user control plane
 
+**Status:** implemented in the initial modular-monolith slice. PostgreSQL
+migrations, SQLite contract tests, durable lifecycle objects, transactional
+schedule deduplication, restart checkpoints, outbox records, and audit links
+are available under `src/openmuse/`.
+
 **Goal:** create persistent domain objects before autonomy.
 
 Implement:
@@ -64,6 +69,12 @@ Exit criteria:
 - audit trail links goal -> task -> execution.
 
 ## Phase 2 — Model-neutral agent loop
+
+**Status:** implemented in the initial modular-monolith slice. The OpenMuse
+adapter contract, deterministic fake backend, OpenAI-compatible backend,
+normalized streaming/tool calls, structured-output validation, usage tracking,
+role profiles, and local-only routing hooks are available under
+`src/openmuse/`.
 
 **Goal:** prove provider independence early.
 
