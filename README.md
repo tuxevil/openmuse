@@ -2,15 +2,15 @@
 
 > **Your personal AI. Your computer. Your models. Your rules.**
 
-OpenMuse is an experimental open-source, model-agnostic personal AI agent designed to keep working on your behalf across long-running goals, tools, applications, files, and the web.
+OpenMuse is an experimental, model-agnostic personal AI agent **intended to be released as open source**, designed to keep working on your behalf across long-running goals, tools, applications, files, and the web.
 
-The project is inspired by the product and security concepts publicly described for Meta Muse, while deliberately pursuing a different implementation goal: a portable, self-hostable agent runtime that is not tied to Meta infrastructure, Meta models, or any single model provider.
+The project is inspired by product and security concepts publicly described for Meta Muse, while deliberately pursuing a different implementation goal: a portable, self-hostable agent runtime that is not tied to Meta infrastructure, Meta models, or any single model provider.
 
 OpenMuse is **not** an unofficial client for Meta Muse and does not use or depend on private Meta APIs. `OpenMuse` is currently a development codename; naming and trademark review remain open project decisions.
 
 ## Status
 
-**Pre-alpha / architecture phase.** The repository is being bootstrapped with the product vision, architecture, security model, model contract, runtime boundaries, memory design, goals/tasks model, skills/connectors model, and implementation roadmap before substantial code is written.
+**Pre-alpha / architecture phase.** The repository currently defines the product vision, architecture, security model, model contract, runtime boundaries, memory design, goals/tasks model, skills/connectors model, and implementation roadmap before substantial code is written.
 
 ## Core idea
 
@@ -43,7 +43,7 @@ OpenMuse is being designed around the following principles:
 7. **Portable data.** Memory, goals, artifacts, skills, configuration, and audit data should be exportable rather than trapped in a hosted service.
 8. **Open interfaces.** Prefer standard or broadly reusable interfaces such as OpenAI-compatible model APIs, MCP, Agent Skills-style packages, CLIs, HTTP, and explicit typed contracts.
 9. **Replaceable subsystems.** Models, browser implementations, sandboxes, vector stores, schedulers, and connector backends should be replaceable behind stable contracts.
-10. **Agent-extensible, security-immutable.** The agent may create skills, scripts, artifacts, and workspace code, but it must not be able to rewrite the services that police it.
+10. **Agent-extensible, security-protected.** The agent may create skills, scripts, artifacts, and workspace code, but it must not be able to rewrite the services that police it.
 
 ## Conceptual architecture
 
@@ -84,6 +84,24 @@ Clients: Web / Mobile / WhatsApp / CLI / other channels
                     Outside world
 ```
 
+## Read the design
+
+Start here:
+
+- [VISION.md](VISION.md) — mission, product thesis, principles, non-goals, and v1 definition of success.
+- [ARCHITECTURE.md](ARCHITECTURE.md) — components, trust domains, data stores, runtime and core contracts.
+- [SECURITY.md](SECURITY.md) — security invariants, credential architecture, egress, browser and connector policy.
+- [THREAT-MODEL.md](THREAT-MODEL.md) — assets, attackers, concrete threats, mitigations, residual risks, and test categories.
+- [SENTINEL.md](SENTINEL.md) — deterministic action authorization, grants, approvals, network egress and credential surrogation.
+- [MODEL-CONTRACT.md](MODEL-CONTRACT.md) — provider-neutral model adapters, capabilities, tools, routing and fallback semantics.
+- [MEMORY.md](MEMORY.md) — inspectable memory, provenance, sensitivity, retrieval, conflict handling and export.
+- [GOALS-TASKS.md](GOALS-TASKS.md) — durable goals, tasks, executions, scheduling, events, subagents and notifications.
+- [SKILLS-CONNECTORS.md](SKILLS-CONNECTORS.md) — extension model, generated skills, privileged connectors, MCP and CLI conventions.
+- [ROADMAP.md](ROADMAP.md) — vertical implementation sequence and milestone exit criteria.
+- [AGENTS.md](AGENTS.md) — working contract for coding agents contributing to the repository.
+- [docs/meta-muse-research.md](docs/meta-muse-research.md) — source-backed research separating Meta-documented behavior from OpenMuse interpretation.
+- [docs/adr/](docs/adr/) — architecture decisions that should not be changed casually.
+
 ## What OpenMuse is not
 
 OpenMuse is not intended to be:
@@ -94,22 +112,6 @@ OpenMuse is not intended to be:
 - a clone of Meta's private implementation;
 - a replacement for deterministic security controls with prompt instructions;
 - a system where installing a skill implicitly grants it every credential or network destination.
-
-## Documentation
-
-The detailed project documentation is being developed in this repository. The initial architecture bootstrap covers:
-
-- product vision and non-goals;
-- system architecture and trust boundaries;
-- security principles and threat model;
-- Sentinel authorization and egress design;
-- provider-neutral model contract;
-- persistent memory and provenance;
-- goals, tasks, scheduling, and proactive work;
-- skills and connector isolation;
-- findings from publicly documented Meta Muse behavior;
-- implementation roadmap and acceptance criteria;
-- instructions for coding agents contributing to the project.
 
 ## Influences
 
@@ -132,4 +134,4 @@ Everything else should build on that foundation.
 
 ## License
 
-A project license has **not yet been selected**. Do not assume permission beyond GitHub's default rights until a license is added.
+A project license has **not yet been selected**. Until a license is added, the repository should not be represented as legally open-source software despite that being the project's intent. License choice is an explicit project decision still to be made.
